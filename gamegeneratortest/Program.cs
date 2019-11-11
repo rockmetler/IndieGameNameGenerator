@@ -23,28 +23,29 @@ namespace gamegeneratortest
             string Adj = Adjectives[rnd.Next(0, Adjectives.Length)];
             string V = Verbs[rnd.Next(0, Verbs.Length)];
 
-            switch (namernd.Next(0, 6))
+            switch (namernd.Next(0, 7))
             {
                 case 0:
                     return (string.Format("Your game is a {0} called: The {1} Of {2}", G, N, N2));
-                    
+
                 case 1:
                     return (string.Format("Your game is a {0} called: {1} Of {2}", G, N, V));
                 case 2:
                     return (string.Format("Your game is a {0} called: {1} the {2}", G, V, N));
-                    
+
                 case 3:
                     return (string.Format("your game is a {0} called: {1} {2}", G, Adj, N));
-                    
+
                 case 4:
                     return (string.Format("your game is a {0} called: {1} of {2}", G, N, V));
-                    
+
                 case 5:
                     return (string.Format("your game is a {0} called: {1} the {2} {3}", G, V, Adj, N));
-                    
+
                 case 6:
                     return (string.Format("your game is a {0} called: {1} all {2}s", G, V, N));
-                    
+                case 7:
+                    return (string.Format("your game is {0} called: {1} of {2}, where you must {3} a {4} with a {5} {6}.", G, N, N2, V, Nouns[rnd.Next(0, Nouns.Length)], Adj, Nouns[rnd.Next(0, Nouns.Length)]));
             }
             return "something went wrong";
         }
